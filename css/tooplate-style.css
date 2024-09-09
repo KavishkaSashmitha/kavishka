@@ -6,10 +6,9 @@ https://www.tooplate.com/view/2115-marvel
 
 */
 
-
-@import url("https://fonts.googleapis.com/css?family=Maven+Pro:400,700");
+@import url('https://fonts.googleapis.com/css?family=Maven+Pro:400,700');
 body {
-  font-family: "Maven Pro", sans-serif;
+  font-family: 'Maven Pro', sans-serif;
   padding-top: 70px;
 }
 
@@ -54,7 +53,12 @@ p {
   color: #5b5b5b;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: bold;
   letter-spacing: -1px;
 }
@@ -76,7 +80,8 @@ h3 {
 }
 
 h3,
-b, strong {
+b,
+strong {
   font-weight: bold;
 }
 
@@ -131,10 +136,10 @@ b, strong {
   left: 0;
   animation: BottomTotop 6s linear infinite 0s;
 }
-.animated-item:nth-child(2n+2) {
+.animated-item:nth-child(2n + 2) {
   animation-delay: 2s;
 }
-.animated-item:nth-child(3n+3) {
+.animated-item:nth-child(3n + 3) {
   animation-delay: 4s;
 }
 
@@ -174,13 +179,13 @@ b, strong {
   will-change: transform;
   transition: transform 200ms linear;
 }
-.navbar[class*="-unpinned"] {
+.navbar[class*='-unpinned'] {
   transform: translate(0, -150%);
 }
-.navbar[class*="-pinned"] {
+.navbar[class*='-pinned'] {
   transform: translate(0, 0);
 }
-.navbar[class*="headroom--not-top"] {
+.navbar[class*='headroom--not-top'] {
   background: #ffffff;
   border-bottom: 1px solid #f0f0f0;
   padding-top: 0;
@@ -239,14 +244,14 @@ b, strong {
 .navbar-toggler:focus {
   outline: none;
 }
-.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:first-child {
+.navbar-toggler[aria-expanded='true'] .navbar-toggler-icon:first-child {
   transform: rotate(45deg);
   top: 6px;
 }
-.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:nth-child(2) {
+.navbar-toggler[aria-expanded='true'] .navbar-toggler-icon:nth-child(2) {
   display: none;
 }
-.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:last-child {
+.navbar-toggler[aria-expanded='true'] .navbar-toggler-icon:last-child {
   transform: rotate(-45deg);
   bottom: 1px;
 }
@@ -298,7 +303,7 @@ b, strong {
 .dark-mode .navbar-light .navbar-nav .nav-link:hover {
   color: #ffc200;
 }
-.dark-mode .navbar[class*="headroom--not-top"] {
+.dark-mode .navbar[class*='headroom--not-top'] {
   background: #0c0c0d;
   border-bottom: 1px solid #1f1f1f;
 }
@@ -308,7 +313,12 @@ b, strong {
 }
 .dark-mode .feature-card .uil,
 .dark-mode .navbar-light .navbar-brand,
-.dark-mode h1, .dark-mode h2, .dark-mode h3, .dark-mode h4, .dark-mode h5, .dark-mode h6,
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6,
 .dark-mode .color-mode {
   color: #ffffff;
 }
@@ -326,7 +336,7 @@ b, strong {
   height: 0;
 }
 .timeline-wrapper:before {
-  content: "";
+  content: '';
   background: #474559;
   width: 3px;
   height: 100%;
@@ -390,14 +400,14 @@ b, strong {
   right: -45px;
 }
 
-.owl-theme .owl-nav [class*=owl-] {
+.owl-theme .owl-nav [class*='owl-'] {
   background: none;
   border-radius: 0;
   margin: 0;
   padding: 0;
   font-size: inherit;
 }
-.owl-theme .owl-nav [class*=owl-]:hover {
+.owl-theme .owl-nav [class*='owl-']:hover {
   color: #ffc200;
 }
 .owl-theme .owl-dots .owl-dot {
@@ -407,7 +417,8 @@ b, strong {
   width: 8px;
   height: 8px;
 }
-.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
   background: #5b5b5b;
 }
 
@@ -429,7 +440,8 @@ b, strong {
 .contact-form .form-control:not(textarea) {
   height: 48px;
 }
-.contact-form .form-control:hover, .contact-form .form-control:focus {
+.contact-form .form-control:hover,
+.contact-form .form-control:focus {
   border-color: #ffc200;
 }
 .contact-form .submit-btn {
@@ -451,7 +463,8 @@ b, strong {
   position: relative;
   bottom: 8px;
 }
-.contact-info p, .contact-info a {
+.contact-info p,
+.contact-info a {
   color: #f7f3f3;
 }
 
@@ -517,9 +530,9 @@ b, strong {
   }
 }
 @media (max-width: 580px) {
-	.animated-info {
-		min-width: 200px;
-	}
+  .animated-info {
+    min-width: 200px;
+  }
   .animated-item {
     font-size: 30px;
   }
@@ -567,4 +580,39 @@ b, strong {
     display: inline-block;
     vertical-align: top;
   }
+}
+/* Dark mode styles */
+.dark-mode .card-body {
+  background-color: #333; /* Or another color suitable for dark mode */
+  color: #f0f0f0; /* Text color for better readability */
+}
+@media (max-width: 768px) {
+  .btn {
+    width: 100%; /* Full width on small screens */
+
+    font-size: 0.9rem;
+  }
+}
+.details-hidden {
+  display: none;
+}
+
+.details-visible {
+  display: block;
+}
+.slider {
+  width: 80%; /* Adjust the width as needed */
+  margin: 20px auto; /* Center the slider horizontally */
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1),
+    /* Light shadow */ 0 6px 20px rgba(0, 0, 0, 0.1); /* Darker, deeper shadow */
+  border-radius: 8px; /* Rounded corners for a smooth look */
+}
+.slider img {
+  width: 100%;
+  display: none;
+}
+.slider img.active {
+  display: block;
 }
