@@ -38,11 +38,11 @@
   // TOOLTIP
   $('.social-links a').tooltip();
 
-  // JavaScript for filtering projects
   window.filterProjects = function () {
     var searchInput = document
       .getElementById('projectSearch')
-      .value.toLowerCase();
+      .value.toLowerCase()
+      .trim();
     var statusFilter = document.getElementById('projectStatusFilter').value;
     var cards = document.getElementsByClassName('project-card');
 
@@ -51,9 +51,13 @@
       var description = card.getAttribute('data-description').toLowerCase();
       var status = card.getAttribute('data-status');
 
+      // Check if any letter in the search input matches the title or description
       var matchesSearch =
-        title.includes(searchInput) || description.includes(searchInput);
-      var matchesStatus = statusFilter === '' || status === statusFilter;
+        !searchInput ||
+        Array.from(searchInput).some(
+          (char) => title.includes(char) || description.includes(char)
+        );
+      var matchesStatus = !statusFilter || status === statusFilter;
 
       if (matchesSearch && matchesStatus) {
         card.style.display = 'block';

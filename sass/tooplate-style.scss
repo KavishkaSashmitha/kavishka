@@ -148,48 +148,62 @@ strong {
 .animated-item {
   color: $main-color;
 }
+.animated-info {
+  position: relative;
+  height: 40px; /* Adjust the height to fit your text */
+  overflow: hidden;
+}
 
 .animated-item {
   font-size: 32px;
-  line-height: inherit;
+  line-height: 40px; /* Match this with the container height */
   display: block;
   opacity: 0;
-  overflow: hidden;
   position: absolute;
   top: 0;
   right: 0;
   left: 0;
-  animation: BottomTotop 6s linear infinite 0s;
-  &:nth-child(2n + 2) {
-    animation-delay: 2s;
-  }
-  &:nth-child(3n + 3) {
-    animation-delay: 4s;
-  }
+  animation: BottomTotop 10s linear infinite;
 }
 
+/* Add specific delays for each word */
+.animated-item:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.animated-item:nth-child(2) {
+  animation-delay: 2s;
+}
+
+.animated-item:nth-child(3) {
+  animation-delay: 4s;
+}
+
+.animated-item:nth-child(4) {
+  animation-delay: 6s;
+}
+
+.animated-item:nth-child(5) {
+  animation-delay: 8s;
+}
+
+/* Keyframes to show one item at a time */
 @keyframes BottomTotop {
   0% {
     opacity: 0;
-  }
-  5% {
-    opacity: 0;
-    transform: translateY(5px);
+    transform: translateY(100%);
   }
   10% {
     opacity: 1;
-    transform: translateY(0px);
+    transform: translateY(0);
   }
-  25% {
+  20% {
     opacity: 1;
-    transform: translateY(0px);
+    transform: translateY(0);
   }
   30% {
     opacity: 0;
-    transform: translateY(5px);
-  }
-  80% {
-    opacity: 0;
+    transform: translateY(-100%);
   }
   100% {
     opacity: 0;
@@ -664,4 +678,4 @@ strong {
       vertical-align: top;
     }
   }
-} 
+}

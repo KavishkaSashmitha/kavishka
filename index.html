@@ -171,87 +171,7 @@ https://www.tooplate.com/view/2115-marvel
 
             <!-- Projects Cards -->
             <div class="row" id="projectsContainer">
-              <!-- Project 1 -->
-              <div
-                class="col-lg-4 col-md-6 mb-4 project-card"
-                data-status="ongoing"
-                data-title="Project 1"
-                data-description="A brief description of Project 1."
-              >
-                <div class="card shadow-sm">
-                  <div class="card-body">
-                    <h5 class="card-title">Food Ordering System</h5>
-                    <p class="card-text">
-                      This Enhance users Food Ordering system Locally
-                    </p>
-                    <button
-                      class="btn custom-btn custom-btn-bg custom-btn-link"
-                      onclick="showPreview('https://ambasewanasl.netlify.app')"
-                    >
-                      Preview
-                    </button>
-                    <a
-                      href="https://github.com/Univara/univara.github.io"
-                      class="btn mr-lg-2 custom-btn"
-                      ><i class="fa-solid fa-code"></i>Source</a
-                    >
-                  </div>
-                </div>
-              </div>
-
-              <!-- Project 2 -->
-              <div
-                class="col-lg-4 col-md-6 mb-4 project-card"
-                data-status="done"
-                data-title="Project 2"
-                data-description="A brief description of Project 2."
-              >
-                <div class="card shadow-sm">
-                  <div class="card-body">
-                    <h5 class="card-title">Project 2</h5>
-                    <p class="card-text">A brief description of Project 2.</p>
-                    <button
-                      class="btn custom-btn custom-btn-bg"
-                      onclick="showPreview('https://herbalheaven.netlify.app/')"
-                    >
-                      Preview
-                    </button>
-                    <a
-                      href="https://github.com/Univara/univara.github.io"
-                      class="btn mr-lg-2 custom-btn"
-                      ><i class="fa-solid fa-code"></i>Source</a
-                    >
-                  </div>
-                </div>
-              </div>
-
-              <!-- Project 3 -->
-              <div
-                class="col-lg-4 col-md-6 mb-4 project-card"
-                data-status="done"
-                data-title="Project 3"
-                data-description="A brief description of Project 3."
-              >
-                <div class="card shadow-sm">
-                  <div class="card-body">
-                    <h5 class="card-title">Project 3</h5>
-                    <p class="card-text">A brief description of Project 3.</p>
-                    <button
-                      class="btn custom-btn custom-btn-bg custom-btn-link"
-                      onclick="showPreview('http://univara.web.lk/')"
-                    >
-                      Preview
-                    </button>
-                    <a
-                      href="https://github.com/Univara/univara.github.io"
-                      class="btn mr-lg-2 custom-btn"
-                      ><i class="fa-solid fa-code"></i>Source</a
-                    >
-                  </div>
-                </div>
-              </div>
-
-              <!-- Add more project cards as needed -->
+              <!-- Project cards will be inserted here by JavaScript -->
             </div>
 
             <!-- Preview Section -->
@@ -267,6 +187,53 @@ https://www.tooplate.com/view/2115-marvel
         </div>
       </div>
     </section>
+
+    <!-- JavaScript to load projects from JSON -->
+    <script>
+      // Function to fetch and display project cards
+      function loadProjects() {
+        fetch('projects.json')
+          .then((response) => response.json())
+          .then((data) => {
+            const projectsContainer =
+              document.getElementById('projectsContainer');
+            projectsContainer.innerHTML = ''; // Clear any existing projects
+
+            data.forEach((project) => {
+              const projectCard = `
+                <div
+                  class="col-lg-4 col-md-6 mb-4 project-card"
+                  data-status="${project.status}"
+                  data-title="${project.title}"
+                  data-description="${project.description}"
+                >
+                  <div class="card shadow-sm">
+                    <div class="card-body">
+                      <h5 class="card-title">${project.title}</h5>
+                      <p class="card-text">${project.description}</p>
+                      <button
+                        class="btn custom-btn custom-btn-bg custom-btn-link"
+                        onclick="showPreview('${project.previewUrl}')"
+                      >
+                        Preview
+                      </button>
+                      <a
+                        href="${project.sourceUrl}"
+                        class="btn mr-lg-2 custom-btn"
+                      ><i class="fa-solid fa-code"></i>Source</a>
+                    </div>
+                  </div>
+                </div>
+              `;
+              projectsContainer.innerHTML += projectCard;
+            });
+          })
+          .catch((error) => console.error('Error loading projects:', error));
+      }
+
+      // Call loadProjects on page load
+      document.addEventListener('DOMContentLoaded', loadProjects);
+    </script>
 
     <!-- FEATURES -->
     <section
